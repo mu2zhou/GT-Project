@@ -1,0 +1,60 @@
+Dates: 06-09.10.2019
+
+General description: 
+These data refer to a comprehensive test campaign involving 10 commercially available ACC-equipped vehicles. The tests were executed at two different test tracks of the ZalaZONE proving ground, the Dynamic Platform and Handling Course.The tests have been carried out at low-speeds (30-60 km/h) and have involved platoons of vehicles of different brands and different powertrains, which were tested in a variety of vehicle orders and with different settings of their ACC systems. 
+General ACC performance and related string stability was investigated through measurements carried out on the Dynamic Platform module. The car-following pattern applied in these tests was the application of a perturbation, in the form of a quick deceleration to a new speed and a subsequent acceleration to restore the desired speed, from an equilibrium speed for the platoon.
+The effect of road geometry on the ACC performance was tested and evaluated on the Handling Course module. The leader vehicle was driven using the cruise control at the constant target speed during the whole experiment, no perturbations were applied.
+
+Total number of vehicles: 11. In general there were 11 vehicles in each test, the leader and the 10 commercially available ACC-equipped vehicles. However, in some cases some vehicles, were out of the platoon or the measurement system did not provide meaningful results, therefore the number of vehicles is not 11 in all files.
+
+Equipment: INVENTURE (Race Logic VBOX), U-blox 9, Tracker App (available from ZalaZONE).
+
+Data processing: The data from the different sensors have been fused and interpolated to 10 Hz using 2nd degree B-splines.
+
+Columns description:
+Time:	Common time frame for all vehicles (s)
+Speed:	Raw Speed (Doppler) (m/s)
+Lat:	Latitude (rad)
+Lon:	Longitude (rad)
+Alt:	Altitude (m)
+E:	East (x) coordinate in the local ENU plane (common center for all vehicles) (m)
+N:	North (y) coordinate in the local ENU plane (common center for all vehicles) (m)
+IVS:	IVS computed from raw GNSS data after bumper to bumper correction (m)
+
+Csv files: files are separated in parts depending on the desired speed and on the timegap setting. The first part of the filenames includes the name of the test track, for example: handling_part1 or dynamic_part1.
+
+Csv Metadata information:
+Metadata that are trip-experiment specific are saved as header (comma seperated) (5 rows) in the csv file in this example form:
+Date,DD,MM,YYYY		
+Vehicle_order,veh1,veh2,etc	
+Number_of_vehicles,5					
+ACC, 1 					
+
+Comments:
+-ACC option: 0 when the whole experiment is conducted in manually driving conditions, 1 when the whole experiment is conducted with ACC.
+
+-Distance_setting: Distance setting was either S for short, M for medium and L for long. S and L settings refer to the minimum and maximum vehicle setting respectively.
+
+-There were cases in the Handling Course where the whole platoon used short setting apart from the two vehicles in the middle of the platoon which used the long one. In this case SL notifies this mix of time gap settings. In the folder, there is a csv file named "Long setting vehs in mixed timegap experiment handling" which denotes which files had mixed timegap settings and which vehicles had the long timegap setting. 
+
+-There are cases where there were missing data from some vehicles during a test run. In this case, one can see in the header-metadata of the csv the whole set of vehicles theoretically participating in the platoon. In the data series the missing vehicles' data can be seen from the title of the columns. For instance if we have missing values for the second vehicle (second as being noted in the respective header section), then Speed2 is absent in the dataset.
+
+-There are cases where the number of vehicles in the files is smaller from 11 due to the fact that some vehicles were out of the platoon.
+
+-There are some cases where the distance between two vehicles mentioned as IVS in the files, takes negative values. This happens in some instances at the following files:
+handling_part12
+handling_part14
+handling_part16
+handling_part17
+handling_part20
+handling_part21
+handling_part22
+handling_part26
+handling_part31
+handling_part35
+handling_part39
+handling_part40
+handling_part43
+handling_part44
+handling_part47
+handling_part9

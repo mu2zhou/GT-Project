@@ -1,0 +1,5 @@
+Vehicles,Max power (kW),Drive-Fuel,Engine displacement (cc),Battery capacity (kWh),Propulsion type ,Top speed (km/h),Model year
+Fiat (500X),103,diesel,1956,-,ICE,190,2016
+Volvo (XC40),140,diesel,1969,-,ICE,210,2018
+VW (Polo),63,Gasoline and liquid propane gas,1390,-,ICE,177,2010
+Hyundai (Ioniq hybrid),104,gasoline,1580,1.56,HEV ,185,2018

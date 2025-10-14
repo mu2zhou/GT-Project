@@ -1,0 +1,23 @@
+Dates: 2nd half of 2016 and 1st half of 2017 (in total 12 months)
+
+General description: 
+This campaign lasted for a whole year and was conducted in public roads in Europe. It involves 20 drivers and a single vehicle. During the period of the experimental campaign, every two weeks, the vehicle was assigned to a volunteer driver, who was free to use it as a personal vehicle without any restriction on the frequency of usage, the driving style, the fuel consumption or the route choice. Fuel was not provided to the volunteer drivers so that the driving style is not influenced. Driving data include trips with different origins and destinations and under different environmental conditions. 
+
+The whole experiment was manually driven, there was no ACC.
+
+More information regarding this experimental campaign can be found in the following report:  https://publications.jrc.ec.europa.eu/repository/handle/JRC107796?mode=full.
+
+Total number of vehicles: 1
+
+Equipment: combination of CAN and OBD.
+
+Data processing: Big outliers were filtered out and the data were interpolated to achieve a frequency of 10 Hz.
+
+Columns description:
+Time: Time (s)
+Speed: Speed of the vehicle (m/s)
+Engine Speed: Speed of the engine (rpm)
+Gear: Current gear as calculated with the CO2mpas model.
+
+Comments:
+-Files are separated in several parts-trips driven by each driver. This is obvious in the filenaming which contains the driver ID and the increasing number of the part-trip they drove.
